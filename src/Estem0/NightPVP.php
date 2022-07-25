@@ -24,7 +24,7 @@ class NightPVP extends PluginBase implements Listener{
                 if($event->getEntity() instanceof Player && $event->getDamager() instanceof Player){
                   
                     if(!$event->getDamager()->hasPermission("nightpvp.exempt.victim") && !$event->getDamager()->hasPermission("nightpvp.exempt.damager")){
-                        $this->$event->setCancelled();
+                        $this->$event->cancel();
                     }
                     
                 }
