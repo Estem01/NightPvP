@@ -19,7 +19,7 @@ class NightPVP extends PluginBase implements Listener{
       
         if($event instanceof EntityDamageByEntityEvent){
           
-            if(!$this->isNight($event->getEntity()->getLevel()->getTime())){
+            if(!$this->isNight($event->getEntity()->getWorld()->getTime())){
               
                 if($event->getEntity() instanceof Player && $event->getDamager() instanceof Player){
                   
