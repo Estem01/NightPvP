@@ -7,8 +7,9 @@ namespace Estem0;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\Listener;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
+use pocketmine\world\World;
 
 class NightPVP extends PluginBase implements Listener{
   
@@ -19,12 +20,12 @@ class NightPVP extends PluginBase implements Listener{
       
         if($event instanceof EntityDamageByEntityEvent){
           
-            if(!$this->isNight($event->getEntity()->getLevel()->getTime())){
+            if(!$this->isNight($event->getEntity()->getWorld()->getTime())){
               
                 if($event->getEntity() instanceof Player && $event->getDamager() instanceof Player){
                   
                     if(!$event->getDamager()->hasPermission("nightpvp.exempt.victim") && !$event->getDamager()->hasPermission("nightpvp.exempt.damager")){
-                        $event->setCancelled();
+                        $event->cancel();
                     }
                     
                 }
