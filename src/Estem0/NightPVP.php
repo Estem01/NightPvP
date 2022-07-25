@@ -17,6 +17,7 @@ class NightPVP extends PluginBase implements Listener{
     }
 
     public function onEntityDamageByEntity(EntityDamageEvent $event){
+	    $player = $event->getOrigin();
       		$NPWorld = $player->getWorld()->getFolderName();
 		      $ANPWorld = (array)$this->getConfig()->get("worlds");
         if($event instanceof EntityDamageByEntityEvent){          
