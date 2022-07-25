@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Estem01/NightPvP
+build-by-default: true
+branches:
+- main
+projects:
+  NightPvP:
+    path: ""
+...
