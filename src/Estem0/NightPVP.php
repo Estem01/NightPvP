@@ -19,8 +19,8 @@ class NightPVP extends PluginBase implements Listener{
 
     public function onEntityDamageByEntity(EntityDamageEvent $event){
 
-	      if($event->getEntity->getWorld()->getConfig() instanceof Player && $event){
-      		$NPWorld = $event->getPlayer()->getWorld()->getFolderName();
+	      if($event->getEntity()->getWorld()->getConfig() instanceof Player && $event){
+      		$NPWorld = $event->getEntity()->getWorld()->getFolderName();
 		      $ANPWorld = (array)$this->getConfig()->get("worlds");
 	      }
         if($event instanceof EntityDamageByEntityEvent){          
@@ -41,11 +41,12 @@ class NightPVP extends PluginBase implements Listener{
     public function isNight($t){
       
       if($event->getEntity()->getWorld()->getConfig() instanceof Player && $event){
-		$NPWorld = $event->getPlayer()->getWorld()->getFolderName();
+		$NPWorld = getEntity()->getWorld()->getFolderName();
 		$ANPWorld = (array)$this->getConfig()->get("worlds");
       }
-		if (!$event->in_array($NPWorld, $ANPWorld)) return;
+		if (!$event->in_array($NPWorld, $ANPWorld)){ return;
 		$this->$event->cancel();
         return ($t >= 10900 && $t < 17800);
+    }
     }
 }
