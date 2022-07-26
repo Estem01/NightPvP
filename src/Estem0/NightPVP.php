@@ -40,10 +40,10 @@ class NightPVP extends PluginBase implements Listener{
     
     public function isNight($t){
       
-      $player = instanceof Player;
-      
+      if($event->getEntity()->getWorld()->getConfig() instanceof Player && $event){
 		$NPWorld = $player->getWorld()->getFolderName();
 		$ANPWorld = (array)$this->getConfig()->get("worlds");
+      }
 		if (!$event->in_array($NPWorld, $ANPWorld)) return;
 		$this->$event->cancel();
         return ($t >= 10900 && $t < 17800);
