@@ -7,6 +7,7 @@ namespace Estem0;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 
@@ -36,10 +37,13 @@ class NightPVP extends PluginBase implements Listener{
     }
     
     public function isNight($t){
+      
+      $player = getOrigin();
+      
 		$NPWorld = getOrigin()->getWorld()->getFolderName();
 		$ANPWorld = (array)$this->getConfig()->get("worlds");
 		if (!in_array($NPWorld, $ANPWorld)) return;
-		$event->cancel();
+		$this->cancel();
         return ($t >= 10900 && $t < 17800);
     }
 }
