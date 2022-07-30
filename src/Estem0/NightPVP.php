@@ -13,8 +13,12 @@ use pocketmine\plugin\PluginBase;
 
 class NightPVP extends PluginBase implements Listener{
   
+  public Worlds[];
+  
     public function onEnable() : void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        $this->mkdir('Config.yml')->getFolderName();
+        $this->getConfig()->getFolderName('Config.yml');
     }
 
     public function onEntityDamageByEntity(EntityDamageEvent $event){
@@ -39,11 +43,9 @@ class NightPVP extends PluginBase implements Listener{
     }
     
     public function isNight($t){
-      
-      if($event->getEntity()->getWorld()->getConfig() instanceof Player && $event){
+    
 		$NPWorld = getEntity()->getWorld()->getFolderName();
 		$ANPWorld = (array)$this->getConfig()->get("worlds");
-      }
 		if (!$event->in_array($NPWorld, $ANPWorld)){ return;
 		$this->$event->cancel();
         return ($t >= 10900 && $t < 17800);
