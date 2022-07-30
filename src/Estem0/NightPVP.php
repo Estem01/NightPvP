@@ -13,8 +13,6 @@ use pocketmine\plugin\PluginBase;
 
 class NightPVP extends PluginBase implements Listener{
   
-  public Worlds[];
-  
     public function onEnable() : void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->mkdir('Config.yml')->getFolderName();
