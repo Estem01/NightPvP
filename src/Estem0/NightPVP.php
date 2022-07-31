@@ -10,43 +10,33 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Config;
 
 class NightPVP extends PluginBase implements Listener{
-  
+    
+    private Config $config;
+
     public function onEnable() : void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->mkdir->getFolderName('Config.yml');
-        $this->config = getConfig()->getFolderName('Config.yml');
+        $this->saveResource("config.yml");
+        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML)
     }
 
-    public function onEntityDamageByEntity(EntityDamageEvent $event){
-
-	      if($event->getEntity()->getWorld()->getConfig() instanceof Player){
-      		$NPWorld = $event->getEntity()->getWorld()->getFolderName();
-		      $ANPWorld = (array)$this->getConfig()->get("worlds");
-	      }
-        if($event instanceof EntityDamageByEntityEvent){          
-            if(!$this->isNight($event->getEntity()->getWorld()->getTime())){
-                if($event->getEntity() instanceof Player && $event->getDamager() instanceof Player){                  
-                    if(!$event->getDamager()->hasPermission("nightpvp.exempt.victim") && !$event->getDamager()->hasPermission("nightpvp.exempt.damager")){
-                        $this->$event->cancel();
+    public function onEntityDamageByEntity(EntityDamageEvent $event) {
+        $entity = $event->getEntity();
+        $damager = $event->getDamager();
+        if ($event instanceof EntityDamageByEntityEvent) {
+            if ($entity instanceof Player && $damager instanceof Player) {
+                if (!$this->isNight($entity->getWorld()->getTime())) {
+                    if (!damager->hasPermission("nightpvp.exempt.victim") && $damager->hasPermission("nightpvp.exempt.damager")) {
+                        $event->cancel();
                     }
-                    
                 }
-                
             }
-            
         }
-        
     }
     
-    public function isNight($t){
-    
-		$NPWorld = getEntity()->getWorld()->getFolderName();
-		$ANPWorld = (array)$this->getConfig()->get("worlds");
-		if (!$event->in_array($NPWorld, $ANPWorld)){ return;
-		$this->cancel();
+    public function isNight($t) {
         return ($t >= 10900 && $t < 17800);
-    }
     }
 }
