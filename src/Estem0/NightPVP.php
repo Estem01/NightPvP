@@ -19,7 +19,7 @@ class NightPVP extends PluginBase implements Listener{
     public function onEnable() : void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveResource("config.yml");
-        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML)
+        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
     }
 
     public function onEntityDamageByEntity(EntityDamageEvent $event) {
