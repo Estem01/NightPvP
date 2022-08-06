@@ -15,7 +15,7 @@ use pocketmine\utils\Config;
 class NightPVP extends PluginBase implements Listener{
     
     private Config $config;
-    return;
+    return true;
 
     public function onEnable() : void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
