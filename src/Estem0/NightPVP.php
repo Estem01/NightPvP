@@ -15,12 +15,12 @@ use pocketmine\utils\Config;
 class NightPVP extends PluginBase implements Listener{
     
     private Config $config;
-    break;
 
     public function onEnable() : void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveResource("config.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+        $this->getConfig("config.yml");
     }
 
     public function onEntityDamageByEntity(EntityDamageEvent $event) {
