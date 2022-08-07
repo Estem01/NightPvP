@@ -18,6 +18,7 @@ class NightPVP extends PluginBase implements Listener{
     public function onEnable() : void
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        new Config($this->getDataFolder() . "config.yml" , Config::YAML);
         
     }
 
