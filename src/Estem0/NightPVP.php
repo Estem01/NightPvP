@@ -14,22 +14,30 @@ use pocketmine\utils\Config;
 
 class NightPVP extends PluginBase implements Listener{
     
-    private Config $config;
 
-    public function onEnable() : void{
+    public function onEnable() : void
+    {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->saveResource("config.yml");
-        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+        new Config($this->getDataFolder() . "config.yml" , Config::YAML);
+        
     }
 
-    public function onEntityDamageByEntity(EntityDamageEvent $event) {
+    public function onEntityDamageByEntity(EntityDamageEvent $event) 
+    {
+        $config = new Config($this->getDataFolder() . "config.yml" , Config::YAML);
         $entity = $event->getEntity();
         if ($event instanceof EntityDamageByEntityEvent) {
             $damager = $event->getDamager();
             if ($entity instanceof Player && $damager instanceof Player) {
                 if (!$this->isNight($entity->getWorld()->getTime())) {
-                    if (!$damager->hasPermission("nightpvp.exempt.victim") && $damager->hasPermission("nightpvp.exempt.damager")) {
-                        $event->cancel();
+                    $worlds = $config->get('worlds');
+                    foreach ($worlds as $world) {
+                        if ($world !== $entity->getWorld()->getDisplayName()) {
+                            $event->cancel();
+                        }
+                        if (!$damager->hasPermission("nightpvp.exempt.victim") && $damager->hasPermission("nightpvp.exempt.damager")) {
+                            $event->cancel();
+                        }
                     }
                 }
             }
