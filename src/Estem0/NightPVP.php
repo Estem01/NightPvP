@@ -23,7 +23,7 @@ class NightPVP extends PluginBase implements Listener{
 
     public function onEntityDamageByEntity(EntityDamageEvent $event) 
     {
-        $config = Main::getInstance()->getConfig();
+        $config = NightPVP::getInstance()->getConfig();
         $entity = $event->getEntity();
         if ($event instanceof EntityDamageByEntityEvent) {
             $damager = $event->getDamager();
