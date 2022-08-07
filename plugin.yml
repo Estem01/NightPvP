@@ -1,8 +1,8 @@
 name: NightPVP
-main: Estem0\NightPVP
+main: Estem01\NightPvP\NightPVP
 version: 1.0
 author: [Estem0, Ihsan48, HenryDM, BilaldevPM]
-api: 4.6.1
+api: 4.0.0
 load: POSTWORLD
 permissions:
  nightpvp:
