@@ -7,34 +7,25 @@ namespace Estem0\NightPvP;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\Config;
 
 class NightPvP extends PluginBase implements Listener{
-    
 
     public function onEnable() : void
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        new Config($this->getDataFolder() . "config.yml" , Config::YAML);
-        
+        $this->saveDefaultConfig();
     }
 
-    public function onEntityDamageByEntity(EntityDamageEvent $event) 
+    public function onEntityDamageByEntity(EntityDamageEvent $event) : void
     {
-        $config = new Config($this->getDataFolder() . "config.yml" , Config::YAML);
-        $entity = $event->getEntity();
         if ($event instanceof EntityDamageByEntityEvent) {
+            $entity = $event->getEntity();
             $damager = $event->getDamager();
             if ($entity instanceof Player && $damager instanceof Player) {
                 if (!$this->isNight($entity->getWorld()->getTime())) {
-                    $worlds = $config->get('worlds');
-                    foreach ($worlds as $world) {
-                        if ($world !== $entity->getWorld()->getDisplayName()) {
-                            $event->cancel();
-                        }
+                    if (in_array($entity->getWorld()->getFolderName(), $this->getConfig()->get('worlds', []))) {
                         if (!$damager->hasPermission("nightpvp.exempt.victim") && $damager->hasPermission("nightpvp.exempt.damager")) {
                             $event->cancel();
                         }
