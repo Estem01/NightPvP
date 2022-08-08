@@ -1,7 +1,7 @@
 name: NightPVP
 main: Estem01\NightPvP\NightPvP
 version: 1.0
-authors: [Estem0, Ihsan48, HenryDM, BilaldevPM, LadinoXx]
+authors: [Estem0, Ihsan48, HenryDM, BilaldevPM, LadinoXx, UnknownNull]
 api: 4.0.0
 permissions:
  nightpvp.exempt.victim:
