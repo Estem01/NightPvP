@@ -1,20 +1,12 @@
 name: NightPVP
 main: Estem01\NightPvP\NightPvP
 version: 1.0
-author: [Estem0, Ihsan48, HenryDM, BilaldevPM]
+authors: [Estem0, Ihsan48, HenryDM, BilaldevPM, LadinoXx]
 api: 4.0.0
-load: POSTWORLD
 permissions:
- nightpvp:
+ nightpvp.exempt.victim:
   default: op
-  children:
-   nightpvp.exempt:
-    default: false
-    description: Exempt from nightpvp
-    children:
-     nightpvp.exempt.victim:
-      default: false
-      description: Exempt from protection during the day
-     nightpvp.exempt.damager:
-      default: op
-      description: Can attack during the day
+  description: Exempt from protection during the day
+ nightpvp.exempt.damager:
+  default: op
+  description: Can attack during the day
