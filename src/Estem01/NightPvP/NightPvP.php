@@ -32,7 +32,7 @@ class NightPvP extends PluginBase implements Listener{
         }
     }
     
-    public function isNight($t) : bool
+    public function isNight(int $t) : bool
     {
         if ($t >= 10900 && $t < 17800) {
             return true;
