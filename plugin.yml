@@ -1,12 +1,11 @@
 name: NightPVP
 main: Estem01\NightPvP\NightPvP
 version: 1.0
-author: [Estem0, Ihsan48, HenryDM, BilaldevPM, LadinoXx]
+authors: [Estem0, Ihsan48, HenryDM, BilaldevPM, LadinoXx]
 api: 4.0.0
-load: POSTWORLD
 permissions:
  nightpvp.exempt.victim:
-  default: false
+  default: op
   description: Exempt from protection during the day
  nightpvp.exempt.damager:
   default: op
