@@ -1,5 +1,5 @@
 name: NightPVP
-main: Estem01\NightPvP\Night
+main: Estem01\NightPvP\NightPvP
 version: 1.0
 author: [Estem0, Ihsan48, HenryDM, BilaldevPM]
 api: 4.0.0
