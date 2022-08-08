@@ -12,7 +12,7 @@ use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
-class NightPVP extends PluginBase implements Listener{
+class Night extends PluginBase implements Listener{
     
 
     public function onEnable() : void
