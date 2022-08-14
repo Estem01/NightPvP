@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Estem01\NightPvP;
+namespace Estem01\NightPvP\Night;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Listener;
