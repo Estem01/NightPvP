@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Estem0\NightPvP\NightPvP;
+namespace Estem0\NightPvP;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 
-class NightPvP extends PluginBase implements Listener{
+class night extends PluginBase implements Listener{
 
     public function onEnable() : void
     {
