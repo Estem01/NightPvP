@@ -9,3 +9,4 @@ PocketMine-MP API 4.0.0 and PHP 8 or PHP 7
 Put the worlds that have PvR enabled at night
 
 # My Server of discord
+https://discord.gg/pyHvRwkJC2
