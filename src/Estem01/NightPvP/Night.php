@@ -11,9 +11,12 @@ use pocketmine\plugin\PluginBase;
 
 class Night extends PluginBase implements Listener{
 
+  public Config $config;
+
     public function onEnable() : void
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        
         $this->saveDefaultConfig();
     }
 
