@@ -1,4 +1,4 @@
-<?php
+Se<?php
 
 declare(strict_types=1);
 
@@ -8,6 +8,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Config;
 
 class Night extends PluginBase implements Listener{
 
@@ -17,7 +18,7 @@ class Night extends PluginBase implements Listener{
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveResource("config.yml");
-        $this->config = yaml_parse_file($this->getDataFolder() . "config.yml");
+        $this->config = New Config($this->getDataFolder() . "config.yml");
         $this->saveDefaultConfig(config.yml);
     }
 
