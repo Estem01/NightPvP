@@ -16,7 +16,8 @@ class Night extends PluginBase implements Listener{
     public function onEnable() : void
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->config = (new Config($this->getDataFolder() . "config.yml", Config::YAML));
+B       $this->saveResource("config.yml");
+        $this->config = yaml_parse_file($this->getDataFolder() . "config.yml");
         $this->saveDefaultConfig(config.yml);
     }
 
