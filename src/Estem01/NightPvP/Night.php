@@ -12,13 +12,13 @@ use pocketmine\utils\Config;
 
 class Night extends PluginBase implements Listener{
 
-  public Config config;
+  public Config $config;
 
     public function onEnable() : void
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveResource("config.yml");
-        $this->config = new Config($this->getDataFolder() . "config.yml");
+        $this->$config = new Config($this->getDataFolder() . "config.yml");
         $this->saveDefaultConfig(config.yml);
     }
 
