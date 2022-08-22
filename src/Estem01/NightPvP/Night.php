@@ -39,6 +39,7 @@ class Night extends PluginBase implements Listener{
     public function isNight(int $t) : bool
     {
         if ($t >= 10900 && $t < 17800) {
+         $this->getPlayer()->sendTip("§4PvP Enabled");
             return true;
         }
         return false;
