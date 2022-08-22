@@ -1,4 +1,4 @@
-Se<?php
+<?php
 
 declare(strict_types=1);
 
@@ -12,7 +12,7 @@ use pocketmine\utils\Config;
 
 class Night extends PluginBase implements Listener{
 
-  public Config $config;
+  public Config config;
 
     public function onEnable() : void
     {
