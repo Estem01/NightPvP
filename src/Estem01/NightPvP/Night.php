@@ -28,7 +28,7 @@ class Night extends PluginBase implements Listener{
         if ($entity instanceof Player and $damager instanceof Player) {
             if (!$this->isNight($entity->getWorld()->getTime())) {
                 if (in_array($entity->getWorld()->getFolderName(), $this->getConfig()->get("worlds"))) {
-                  $this->sendTip("§4PvP Enabled");
+                  $this->$event->getPlayer()->sendTip("§4PvP Enabled");
                     if (!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
                         $event->cancel();
                     }
