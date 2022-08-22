@@ -15,10 +15,11 @@ class Night {
 
             return true;
 
-        }
-
+        }else{
+        switch;
         return false;
 
+    }
     }
 
 }
