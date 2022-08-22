@@ -12,13 +12,14 @@ use pocketmine\utils\Config;
 use pocketmine\world\World;
 use pockemine\world\WorldManager;
 
-class Night extends PluginBase implements Listener{
+class Loader extends PluginBase implements Listener{
 
   public Config $config;
 
     public function onEnable() : void
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        $this->getServer()->getPluginManager()->registerEvents(new Night($this), $this);
         $this->saveResource("config.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml");
     }
