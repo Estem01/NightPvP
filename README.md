@@ -1,4 +1,4 @@
-[![](https://poggit.pmmp.io/shield.state/NightPVP)](https://poggit.pmmp.io/p/NightPVP)
+[![](https://poggit.pmmp.io/shield.state/NightPVP)](https://poggit.pmmp.io/p/NightPVP) [![](https://poggit.pmmp.io/shield.dl.total/NightPVP)](https://poggit.pmmp.io/p/NightPVP)
 # NightPvP
 
 🌌NightPVP is plugin makes it so pvp can only happen at night.
