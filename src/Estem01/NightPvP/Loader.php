@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Estem01\NightPvP;
 
+use Estem01\NightPvP\Event\Night;
+use Estem01\NightPvP\EventListener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
@@ -14,14 +16,23 @@ use pockemine\world\WorldManager;
 
 class Loader extends PluginBase implements Listener{
 
-  public Config $config;
+  private static Main $instance;
+    public Config $config;	
 
     public function onEnable() : void
-    {
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+    
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new Night($this), $this);
         $this->saveResource("config.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml");
+    }
+
+ public function onLoad() : void {
+        self::$instance = $this;
+    }
+	
+    public static function getInstance() : Main {
+        return self::$instance;
     }
 
     public function onEntityDamageByEntity(EntityDamageByEntityEvent $event) : void
