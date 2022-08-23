@@ -9,6 +9,7 @@ use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmime\event\EntityDamageByEntityEvent;
 use pocketmine\world\World;
+use pocketmine\world\WorldManager;
 
 class EventListener implements Listener {
 
