@@ -2,7 +2,7 @@
 
 namespace Estem01\NightPvP;
 
-use Estem01\NightPvP\Loader;
+use Estem01\NightPvP\Main;
 use Estem0\NightPvP\Event\Night;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
