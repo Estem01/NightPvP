@@ -2,7 +2,7 @@
 
 namespace Estem01\NightPvP\Event;
 
-use Estem01\NightPvP\Loader;
+use Estem01\NightPvP\Main;
 use Estem01\NightPvP\EventListener;
 
 class Night {
