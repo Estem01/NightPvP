@@ -1,4 +1,4 @@
-<?php 
+LP<?php 
 
 namespace Estem01\NightPvP\Event;
 
@@ -29,3 +29,4 @@ class Night {
         return $this->main;
     }
 }    
+}
