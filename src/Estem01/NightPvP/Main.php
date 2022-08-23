@@ -10,7 +10,7 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
-class Loader extends PluginBase implements Listener {
+class Main extends PluginBase implements Listener {
 
   private static Main $instance;
     public Config $config;	
