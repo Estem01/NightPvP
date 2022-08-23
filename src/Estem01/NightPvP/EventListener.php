@@ -3,11 +3,16 @@
 namespace Estem01\NightPvP;
 
 use Estem01\NightPvP\Loader;
+use Estem0\NightPvP\Event\Night;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmime\event\EntityDamageByEntityEvent;
 
-class EventListener {
+class EventListener implements Listener {
+
+    public function __construct(private Main $main) {
+        $this->main = $main;
+    }
 
 public function onEntityDamageByEntity(EntityDamageByEntityEvent $event) : void
 
@@ -28,5 +33,13 @@ public function onEntityDamageByEntity(EntityDamageByEntityEvent $event) : void
                     if (!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
 
                         $event->cancel();
-                      }
+                  }
+              }
+          }
+       }
+    }
+
+ public function getMain() : Main {
+        return $this->main;
+    }
 }
