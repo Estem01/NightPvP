@@ -6,6 +6,10 @@ use Estem01\NightPvP\Loader;
 use Estem01\NightPvP\EventListener;
 
 class Night {
+
+  public function __construct(private Main $main) {
+        $this->main = $main;
+    }
   
   public function isNight(int $t) : bool
 
@@ -16,10 +20,14 @@ class Night {
             return true;
 
         }else{
-        switch;
         return false;
 
     }
     }
+ 
+ public function getMain() : Main {
+        return $this->main;
+    }
+}    
 
 }
