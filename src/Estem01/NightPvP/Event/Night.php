@@ -17,17 +17,15 @@ class Night {
 
         if ($t >= 13000 && $t < 18000) {
 
-            return true;
+        return true;
 
         }else{
-        return false;
 
-    }
+        return false;
+      }
     }
  
  public function getMain() : Main {
         return $this->main;
     }
 }    
-
-}
