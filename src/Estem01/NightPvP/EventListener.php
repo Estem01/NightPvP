@@ -9,7 +9,6 @@ use Estem01\NightPvP\utils\Utils;
 use pocketmine\player\Player;
 
 use pocketmine\event\Listener;
-
 use pocketmime\event\entity\EntityDamageByEntityEvent;
 
 class EventListener implements Listener {
