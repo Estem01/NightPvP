@@ -4,7 +4,7 @@ namespace Estem01\NightPvP\Event;
 
 use Estem01\NightPvP\Main;
 use Estem01\NightPvP\EventListener;
-use pocketmine\worl\World;
+use pocketmine\world\World;
 
 class Night {
 
