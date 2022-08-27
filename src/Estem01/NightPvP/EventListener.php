@@ -8,7 +8,7 @@ use Estem01\NightPvP\Utils\Utils;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
-use pocketmime\event\EntityDamageByEntityEvent;
+use pocketmime\event\Entity\DamageByEntityEvent;
 use pocketmine\world\World;
 use pocketmine\world\WorldManager;
 
