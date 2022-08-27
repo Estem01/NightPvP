@@ -14,7 +14,7 @@ use pocketmine\world\WorldManager;
 
 class EventListener implements Listener {
 
-    public function onEntityDamageByEntity(EntityDamageByEntityEvent $event): void{
+    public function onDamageEntity(EntityDamageByEntityEvent $event): void{
         $entity = $event->getEntity();
         $damager = $event->getDamager();
         if($entity instanceof Player and $damager instanceof Player) {
