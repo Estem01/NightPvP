@@ -3,7 +3,8 @@
 namespace Estem01\NightPvP;
 
 use Estem01\NightPvP\Main;
-use Estem0\NightPvP\Event\Night;
+use Estem01\NightPvP\Event\Night;
+use Estem01\NightPvP\Utils\Utils;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
@@ -13,36 +14,19 @@ use pocketmine\world\WorldManager;
 
 class EventListener implements Listener {
 
-    public function __construct(private Main $main) {
-        $this->main = $main;
-    }
-
-public function onEntityDamageByEntity(EntityDamageByEntityEvent $event) : void
-
-    {
-
+    public function onDamageEntity(EntityDamageByEntityEvent $event): void{
         $entity = $event->getEntity();
-
         $damager = $event->getDamager();
-
-        if ($entity instanceof Player and $damager instanceof Player) {
-
-            if (!$this->isNight($entity->getWorld()->getTime())) {
-
-                if (in_array($entity->getWorld()->getFolderName(), $this->getConfig()->get("worlds"))) {
-
-                  $this->$event->getPlayer()->sendTip("§4PvP Enabled");
-
+        if($entity instanceof Player and $damager instanceof Player) {
+            if(!Main::getInstance()->IsNight->isNight($entity->getWorld()->getTime())){
+                if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
+                  $entity->sendTip("§4PvP Enabled");
+                    Utils::playSound($entity, "random.pop2", 1, 1);
                     if (!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
-
                         $event->cancel();
-                  }
-              }
-          }
-       }
-    }
-
- public function getMain() : Main {
-        return $this->main;
+                    }
+                }
+            }
+        }
     }
 }
