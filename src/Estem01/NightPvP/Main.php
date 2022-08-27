@@ -18,7 +18,6 @@ class Main extends PluginBase{
 
     public function onEnable(): void{
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
-        $this->getServer()->getPluginManager()->registerEvents(new Night($this), $this);
         $this->saveResource("config.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml");
 	$this->isNight = new Night($this);
