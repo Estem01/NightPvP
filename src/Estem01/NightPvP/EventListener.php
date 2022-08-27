@@ -5,12 +5,11 @@ namespace Estem01\NightPvP;
 use Estem01\NightPvP\Main;
 use Estem01\NightPvP\Event\Night;
 use Estem01\NightPvP\utils\Utils;
+
 use pocketmine\player\Player;
-use pocketmine\utils\Config;
+
 use pocketmine\event\Listener;
 use pocketmime\event\entity\EntityDamageByEntityEvent;
-use pocketmine\world\World;
-use pocketmine\world\WorldManager;
 
 class EventListener implements Listener {
 
