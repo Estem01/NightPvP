@@ -24,7 +24,7 @@ class Utils {
 
         $pk->pitch = $pitch;
 
-        $player->getNetworkSession()->senddataPacket($pk);
+        $player->getNetworkSession()->sendDataPacket($pk);
 
     }
 
