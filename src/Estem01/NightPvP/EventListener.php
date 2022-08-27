@@ -19,7 +19,7 @@ class EventListener implements Listener {
         $damager = $event->getDamager();
         if($entity instanceof Player and $damager instanceof Player) {
             if(!Main::getInstance()->IsNight->isNight($entity->getWorld()->getTime())){
-                if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->getConfig()->get("worlds"))){
+                if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
                   $entity->sendTip("§4PvP Enabled");
                     Utils::playSound($entity, "random.pop2", 1, 1);
                     if (!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
