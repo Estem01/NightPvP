@@ -1,6 +1,6 @@
 <?php
 
-namespace Estem01\NigtPvP\Utils;
+namespace Estem01\NigtPvP\utils;
 
 use pocketmine\player\Player;
 
