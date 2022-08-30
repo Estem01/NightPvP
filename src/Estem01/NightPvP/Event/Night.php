@@ -11,7 +11,7 @@ class Night implements Listener {
         if($t >= 13000 && $t < 18000){
           return true;
         }else{
-          return false;
+          $event->cancel
         }
     }
 }    
