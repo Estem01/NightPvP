@@ -6,6 +6,7 @@ use Estem01\NightPvP\Main;
 use Estem01\NightPvP\Event\Night;
 use Estem01\NightPvP\Utils\Utils;
 
+use pocketmine\server\Server;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
@@ -15,8 +16,6 @@ use pocketmime\event\Entity\DamageByEntityEvent;
 class EventListener implements Listener {
 
     public function onDamageEntity(EntityDamageByEntityEvent $event): void{
-        $entity = getEntity();
-        $damager = getDamager();
         if($entity instanceof Player and $damager instanceof Player) {
             if(!Main::getInstance()->isNight->isNight($entity->getWorld()->getTime())){
                 if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
