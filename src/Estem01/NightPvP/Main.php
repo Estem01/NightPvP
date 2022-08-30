@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Estem01\NightPvP;
 
 use Estem01\NightPvP\Event\Night;
+use Estem01\NightPVP\Ultils\Ultils;
 use Estem01\NightPvP\EventListener;
 
 use pocketmine\plugin\PluginBase;
