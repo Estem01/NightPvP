@@ -15,15 +15,15 @@ use pocketmime\event\Entity\DamageByEntityEvent;
 class EventListener implements Listener {
 
     public function onDamageEntity(EntityDamageByEntityEvent $event): void{
-        $entity = $event->getEntity();
-        $damager = $event->getDamager();
+        $entity = getEntity();
+        $damager = getDamager();
         if($entity instanceof Player and $damager instanceof Player) {
             if(!Main::getInstance()->isNight->isNight($entity->getWorld()->getTime())){
                 if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
                   $entity->sendTip("§4PvP Enabled");
                     Utils::playSound($entity, "random.pop2", 1, 1);
                     if (!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
-                        $event->cancel();
+                        cancel();
                     }
                 }
             }
