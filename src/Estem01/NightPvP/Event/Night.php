@@ -7,6 +7,8 @@ use Estem01\NightPvP\EventListener;
 use pocketmine\world\World;
 
 class Night {
+
+  public isNight $night;
     
     public function isNight(int $t): bool{    
     $t = getTime();
