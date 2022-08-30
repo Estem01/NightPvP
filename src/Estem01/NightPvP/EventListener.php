@@ -15,6 +15,7 @@ use pocketmime\event\entity\DamageByEntityEvent;
 
 class EventListener implements Listener {
 
+         $entity = $event->getEntity();
     public function onDamageEntity(EntityDamageByEntityEvent $event): void{
         if($entity instanceof Player && $damager instanceof Player) {
             if(!Main::getInstance()->isNight->isNight($entity->getWorld()->getTime())){
