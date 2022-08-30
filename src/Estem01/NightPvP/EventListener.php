@@ -11,7 +11,7 @@ use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
 use pocketmine\event\Listener;
-use pocketmime\event\Entity\DamageByEntityEvent;
+use pocketmime\event\entity\DamageByEntityEvent;
 
 class EventListener implements Listener {
 
