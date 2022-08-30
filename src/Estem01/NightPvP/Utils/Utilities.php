@@ -8,7 +8,7 @@ use pocketmine\player\Player;
 
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
-class Utils {
+class Utilities {
 
     public static function playSound(Player $player, string $soundName, float $volume = 1, float $pitch = 1) {
         $pk = new PlaySoundPacket();
