@@ -15,6 +15,7 @@ use pocketmime\event\entity\DamageByEntityEvent;
 
 class EventListener implements Listener {
 
+         $player = getPlayer();
          $entity = $event->getEntity();
     public function onDamageEntity(EntityDamageByEntityEvent $event): void{
         if($entity instanceof Player && $damager instanceof Player) {
