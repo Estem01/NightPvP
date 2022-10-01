@@ -26,7 +26,7 @@ class EventListener implements Listener {
 
                   if(in_array(Main::getInstance()->config->get("title"))){
                   $config = Main::getInstance()->config->get("title");
-                  $player->sendTip("$config");
+                  $player->sendTitle("$config");
                   }
 
                     Utils::playSound($entity, "random.pop2", 1, 1);
