@@ -7,10 +7,11 @@ use Estem01\NightPvP\EventListener;
 
 class Night implements Listener {
 
-    public function isNight(int $t): bool{    
+    public function isNight(int $t): bool{ 
         if($t >= 13000 && $t < 18000){
           return true;
-        }else{
+        switch;
+          return false;
           $event->cancel
         }
     }
