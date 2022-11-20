@@ -15,7 +15,7 @@ use pocketmime\event\entity\DamageByEntityEvent;
 
 class EventListener implements Listener {
 
-    public function onDamageEntity(EntityDamageByEntityEvent $event): void{
+    public function onDamageEntity(EntityDamageByEntityEvent $event): void {
 
         $player = getPlayer();
          $entity = getEntity();
@@ -27,10 +27,10 @@ class EventListener implements Listener {
                   if(!in_array(Main::getInstance()->config->get("title"))){
                   $config = Main::getInstance()->config->get("title");
                   $player->sendTitle("$config");
-                    Utils::playSound($entity, "random.pop2", 1, 1);
-                    if (!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
+                          }
+
+                    if(!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
                         $event->cancel();
-                        }
                     }
                 }
             }
