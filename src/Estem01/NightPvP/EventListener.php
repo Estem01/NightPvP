@@ -21,8 +21,8 @@ class EventListener implements Listener {
          $entity = getEntity();
 
         if($entity instanceof Player && $damager instanceof Player) {
-            foreach(!Main::getInstance()->isNight->isNight($entity->getWorld()->getTime())){
-                foreach(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
+            if(!Main::getInstance()->isNight->isNight($entity->getWorld()->getTime())){
+                if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
 
                   foreach(!in_array(Main::getInstance()->config->get("title"))){
                   $config = Main::getInstance()->config->get("title");
