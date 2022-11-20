@@ -21,15 +21,15 @@ class EventListener implements Listener {
          $entity = getEntity();
 
         if($entity instanceof Player && $damager instanceof Player) {
-            if(!Main::getInstance()->isNight->isNight($entity->getWorld()->getTime())){
-                if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
+            foreach(!Main::getInstance()->isNight->isNight($entity->getWorld()->getTime())){
+                foreach(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
 
-                  if(!in_array(Main::getInstance()->config->get("title"))){
+                  foreach(!in_array(Main::getInstance()->config->get("title"))){
                   $config = Main::getInstance()->config->get("title");
                   $player->sendTitle("$config");
                           }
 
-                    if(!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
+                    foreach(!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
                         $event->cancel();
                     }
                 }
