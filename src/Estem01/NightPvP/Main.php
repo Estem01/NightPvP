@@ -22,8 +22,8 @@ class Main extends PluginBase{
         $this->getServer()->getPluginManager()->registerEvents(new Utilities ($this), $this);
         $this->getServer()->getPluginManager()->registerEvents(new Night($this), $this);
         $this->saveResource("config.yml");
-        $this->config = new Config($this->getDataFolder() . "config.yml");
-	$this->isNight = new Night($this);
+        $this->$config = new Config($this->getDataFolder() . "config.yml");
+	$this->$isNight = new Night($this);
     }
 
     public function onLoad(): void{
