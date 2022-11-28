@@ -8,7 +8,7 @@ class Night implements Listener {
 
     public function isNight(int $t, $e): bool{ 
         if($t >= 13000 && $t < 18000){
-          return true;
+          return;
           }else{
           $e->cancel;
         }
