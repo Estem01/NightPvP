@@ -6,11 +6,8 @@ use Estem01\NightPvP\Main;
 
 class Night implements Listener {
 
-    public function isNight(int $t, $e): bool{ 
-        if($t >= 13000 && $t < 18000){
-          return;
-          }else{
-          $e->cancel;
-        }
+    public function isNight(Array $array[0], Array $array[1], String $world, $e): bool{ 
+      $time = getTime($array[0], $array[1]); 
+      return $time;
     }
 }    
