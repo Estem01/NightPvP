@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Estem01\NigtPvP\Utils;
+namespace Estem01\NightPvP\Utils;
 
 use pocketmine\player\Player;
 
