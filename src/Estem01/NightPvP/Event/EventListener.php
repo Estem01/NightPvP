@@ -29,6 +29,4 @@ class EventListener implements Listener {
                  }
                }
              }
-           }
-        }
     }
