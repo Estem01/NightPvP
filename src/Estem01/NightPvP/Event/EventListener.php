@@ -4,7 +4,7 @@ namespace Estem01\NightPvP;
 
 use Estem01\NightPvP\Main;
 use Estem01\NightPvP\Event\Night;
-use Estem01\NightPvP\Utils\Utils;
+use Estem01\NightPvP\Utils\Utilities;
 
 use pocketmine\server\Server;
 use pocketmine\player\Player;
@@ -22,18 +22,17 @@ class EventListener implements Listener {
 
         if($entity instanceof Player && $damager instanceof Player) {
             if(!Main::getInstance()->isNight->isNight($entity->getWorld())){
-                if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
-
-                  foreach(!in_array(Main::getInstance()->config->get("title")){
+                if(!Main::getInstance()->config->get("worlds")){
                   $config = Main::getInstance()->config->get("title");
                   $player->sendTitle("$config");
-                          }
+                          
 
                     foreach(!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
                         $event->cancel();
                     }
-                }
-                }
-            }
+                 }
+               }
+             }
+           }
         }
     }
