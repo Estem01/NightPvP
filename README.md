@@ -3,9 +3,11 @@
 
 🌌NightPVP is plugin makes it so pvp can only happen at night.
 
+# It is currently not working!!
+
 # ❗Requirements
 
-PocketMine-MP API 4.0.0 and PHP 8 or PHP 7
+PocketMine-MP API 4.0.0 and PHP 8
 
 # ❓How to use
 
