@@ -24,7 +24,7 @@ class EventListener implements Listener {
             if(!Main::getInstance()->isNight->isNight($entity->getWorld())){
                 if(in_array($entity->getWorld()->getFolderName(), Main::getInstance()->config->get("worlds"))){
 
-                  foreach(!in_array(Main::getInstance()->config->get("title"))){
+                  foreach(!in_array(Main::getInstance()->config->get("title")){
                   $config = Main::getInstance()->config->get("title");
                   $player->sendTitle("$config");
                           }
