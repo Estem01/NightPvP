@@ -23,7 +23,7 @@ class EventListener implements Listener {
         if($entity instanceof Player && $damager instanceof Player) {
             if(!Main::getInstance()->isNight($entity->getWorld())){
 
-                    foreach(!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager") {
+                    foreach(!$damager->hasPermission("nightpvp.exempt.victim") and $damager->hasPermission("nightpvp.exempt.damager")) {
                         $event->cancel();
                     }
                  }
