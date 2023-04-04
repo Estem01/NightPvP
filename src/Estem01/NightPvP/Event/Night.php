@@ -12,8 +12,10 @@ class Night implements Listener {
 
 	if($time >= World::TIME_NIGHT && $time < World::TIME_SUNRISE){    
         return true;       
-    } else {   
+    }else{   
         return false;
         $event->cancel;
+		
+	}
     }
 }    
