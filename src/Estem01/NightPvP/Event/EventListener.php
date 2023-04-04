@@ -33,6 +33,7 @@ class EventListener implements Listener {
                         $event->cancel();
                     }
                 }
+                }
             }
         }
     }
