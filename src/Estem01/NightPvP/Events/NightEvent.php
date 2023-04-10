@@ -3,6 +3,8 @@
 namespace Estem01\NightPvP\Events;
 
 use Estem01\NightPvP\Main;
+use pocketmine\utils\Config;
+
 use pocketmine\world\World;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
