@@ -1,12 +1,15 @@
+# ======================
+#  GENERAL INFORMATIONS
+# ======================
+
 name: NightPVP
+api: [4.0.0]
+version: 1.2.0
 main: Estem01\NightPvP\Main
-version: 1.1
-authors: [Estem0, Ihsan48, HenryDM, BilaldevPM, LadinoXx, UnknownNull, fernanACM]
-api: 4.0.0
-permissions:
- nightpvp.exempt.victim:
-  default: op
-  description: Exempt from protection during the day
- nightpvp.exempt.damager:
-  default: op
-  description: Can attack during the day
+
+# ======================
+#   OTHER INFORMATIONS
+# ======================
+
+authors: [Estem0, Henry8K]
+description: "A plugin to implement nightpvp on your server"
