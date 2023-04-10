@@ -3,7 +3,7 @@
 
 🌌NightPVP is plugin makes it so pvp can only happen at night.
 
-# It is currently not working!!
+
 
 # ❗Requirements
 
