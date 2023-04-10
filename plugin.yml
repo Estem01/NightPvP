@@ -13,12 +13,3 @@ main: Estem01\NightPvP\Main
 
 authors: [Estem0, Henry8K]
 description: "A plugin to implement nightpvp on your server"
-
-# ======================
-#      PERMISSIONS
-# ======================
-
-permissions:
-  nightpvp.bypass:
-    description: "Permission to bypass from night pvp check"
-    default: op

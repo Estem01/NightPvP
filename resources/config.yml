@@ -1,4 +1,9 @@
-#Place the worlds that pvp will be enabled at night
+# =====================
+#      NIGHT PVP
+# =====================
+# "allowed-worlds" is a list of worlds where the world time check will be applied.
+# "error-message-type" specifies the type of error message that will be displayed, either "message" or "popup".
+# "error-no-pvp" is the message that will be sent when PvP is not allowed due to it being night-time.
 
 allowed-worlds: ["world", "Arena"]
 

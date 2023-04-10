@@ -8,6 +8,7 @@ use pocketmine\utils\Config;
 use pocketmine\world\World;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\block\BlockBreakEvent;
 
 class NightEvent implements Listener {
 
@@ -25,7 +26,7 @@ class NightEvent implements Listener {
         $time = $damager->getWorld()->getTimeOfDay();
         $allowedWorlds = $this->config->get("allowed-worlds", []);
 
-        if($damager instanceof Player && $time >= World::TIME_FULL_NIGHT && $time <= World::TIME_FULL_DAY && in_array($world, $allowedWorlds)) {
+        if($damager instanceof Player && $time >= World::TIME_DAY && $time < World::TIME_NIGHT && in_array($world, $allowedWorlds)) {
             $event->cancel();
 
             if($this->config->get("error-message-type") == "popup") {
