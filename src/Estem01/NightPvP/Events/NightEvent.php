@@ -37,21 +37,4 @@ class NightEvent implements Listener {
             }
         }
     }
-
-    public function onBlockBreak(BlockBreakEvent $event) {
-        $player = $event->getPlayer();
-        $world = $player->getWorld()->getFolderName();
-        $time = $player->getWorld()->getTimeOfDay();
-        $allowedWorlds = $this->config->get("allowed-worlds", []);
-
-        if($time >= World::TIME_DAY && $time < World::TIME_NIGHT && in_array($world, $allowedWorlds)) {
-            $event->cancel();
-
-            if($this->config->get("error-message-type") == "popup") {
-                $player->sendPopup($this->config->get("error-no-pvp"));
-            } else {
-                $player->sendMessage($this->config->get("error-no-pvp"));
-            }
-        }
-    }
 }
