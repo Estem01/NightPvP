@@ -1,6 +1,6 @@
 #Place the worlds that pvp will be enabled at night
 
-worlds: ['world']
+allowed-worlds: ["world", "Arena"]
 
-#Message PvP activated
-message: 'example'
+error-message-type: "popup"
+error-no-pvp: "You can only engage in PvP during the night."
