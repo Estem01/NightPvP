@@ -8,8 +8,16 @@ version: 1.2.0
 main: Estem01\NightPvP\Main
 
 # ======================
+#   PERMISSION OPTIONS
+# ======================
+
+permissions:
+  nightpvp.always.on:
+    default: false
+
+# ======================
 #   OTHER INFORMATIONS
 # ======================
 
-authors: [Estem0, Henry8K]
+authors: [Estem0, Henry8K, UnknownNull]
 description: "A plugin to implement nightpvp on your server"
