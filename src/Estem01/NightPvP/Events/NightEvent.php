@@ -33,7 +33,7 @@ class NightEvent implements Listener {
             }
 
             if($this->config->get("error-message-type") == "popup") {
-                $damager->sendPopup($this->config->get("error-no-pvp"));
+                $damager->sendPopup($this->config->get("day-no-pvp"));
             } else {
                 $damager->sendMessage($this->config->get("error-no-pvp"));
             }
