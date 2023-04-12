@@ -16,6 +16,8 @@ Put the world that will have PvP enabled at night in config.yml
 
 # Versions
 
+Version 1.2: Fixed Bugs
+
 Version 1.1: Fixed bugs and added a PvP enabled message 
 
 Version 1.0: First Release
