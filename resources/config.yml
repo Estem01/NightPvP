@@ -8,4 +8,4 @@
 allowed-worlds: ["world", "Arena"]
 
 error-message-type: "popup"
-error-no-pvp: "You can only engage in PvP during the night."
+day-no-pvp: "You can only engage in PvP during the night."
