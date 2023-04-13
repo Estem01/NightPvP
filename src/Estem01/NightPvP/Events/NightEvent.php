@@ -27,7 +27,7 @@ class NightEvent implements Listener {
         $time = $damager->getWorld()->getTimeOfDay();
         $allowedWorlds = $this->config->get("allowed-worlds", []);
 
-        if($damager instanceof Player && $time >= World::TIME_DAY && $time < World::TIME_SUNRISE && in_array($world, $allowedWorlds)) {
+        if($damager instanceof Player && $time >= World::TIME_SUNRISE && $time < World::TIME_NIGHT && in_array($world, $allowedWorlds)) {
             if (!$damager->hasPermission("nightpvp.always.on")){
                 $event->cancel();
             }
