@@ -4,7 +4,7 @@
 
 name: NightPVP
 api: [5.0.0]
-version: 1.3.1
+version: 1.3.2
 main: Estem01\NightPvP\Main
 
 # ======================
