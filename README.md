@@ -128,7 +128,7 @@ This project is licensed under the [Apache License](https://github.com/Estem01/N
 ## 👥 Authors
 
 - [Estem01](https://github.com/Estem01)  
-- Henry8K  
-- UnknownNull  
+- [henrythierrydev](https://github.com/henrythierrydev)  
+- [UnknownNull](https://github.com/UnknownNull)
 
 ---
