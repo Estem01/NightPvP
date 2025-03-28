@@ -1,24 +1,24 @@
 <?php
-
+// src/Estem01/NightPvP/Main.php
 namespace Estem01\NightPvP;
 
+use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Config;
 use Estem01\NightPvP\Events\NightEvent;
 
-use pocketmine\utils\Config;
-use pocketmine\plugin\PluginBase;
-
 class Main extends PluginBase {
-
     private Config $config;
 
     public function onEnable(): void {
+        // Save default config
         $this->saveDefaultConfig();
-        
-        $this->config = new Config($this->getDataFolder() . "config.yml");
+        $this->config = $this->getConfig();
+
+        // Register events
         $this->getServer()->getPluginManager()->registerEvents(new NightEvent($this), $this);
     }
 
-    public function getConfig() : Config {
+    public function getPluginConfig(): Config {
         return $this->config;
     }
 }
