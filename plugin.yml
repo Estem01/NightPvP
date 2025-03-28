@@ -13,11 +13,15 @@ main: Estem01\NightPvP\Main
 
 permissions:
   nightpvp.always.on:
+    description: "Allows players to enable PvP at all times, ignoring night restrictions."
     default: false
+  nightpvp.bypass:
+    description: "Allows players to bypass PvP time restrictions and fight anytime."
+    default: op
 
 # ======================
 #   OTHER INFORMATIONS
 # ======================
 
 authors: [Estem01, Henry8K, UnknownNull]
-description: "A plugin to implement nightpvp on your server"
+description: "A plugin that restricts PvP to nighttime only, with customizable worlds, times, and messages."
