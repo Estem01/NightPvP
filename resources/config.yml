@@ -1,11 +1,25 @@
 # =====================
 #      NIGHT PVP
 # =====================
-# "allowed-worlds" is a list of worlds where the world time check will be applied.
-# "error-message-type" specifies the type of error message that will be displayed, either "message" or "popup".
-# "error-no-pvp" is the message that will be sent when PvP is not allowed due to it being night-time.
 
-allowed-worlds: ["world", "Arena"]
+# resources/config.yml
+# Worlds where NightPvP is active
+allowed-worlds: 
+  - "world"
+  - "arena"
 
+# Error message type (popup or message)
 error-message-type: "popup"
-day-no-pvp: "You can only engage in PvP during the night."
+
+# PvP restriction message
+day-no-pvp: "§cYou can only fight during the night!"
+
+# Custom world time settings
+night-start-time: 13000  # Minecraft night start time
+night-end-time: 23000    # Minecraft night end time
+
+# Enable/disable world time check
+enable-world-time-check: true
+
+# Enable plugin logger
+enable-logger: false
