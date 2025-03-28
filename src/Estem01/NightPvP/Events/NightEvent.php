@@ -1,41 +1,62 @@
 <?php
-
+// src/Estem01/NightPvP/Events/NightEvent.php
 namespace Estem01\NightPvP\Events;
 
 use Estem01\NightPvP\Main;
-use pocketmine\utils\Config;
-
-use pocketmine\player\Player;
-use pocketmine\world\World;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\event\block\BlockBreakEvent;
+use pocketmine\player\Player;
+use pocketmine\world\World;
 
 class NightEvent implements Listener {
-
     private Main $main;
-    private Config $config;
+    private array $config;
 
     public function __construct(Main $main) {
         $this->main = $main;
-        $this->config = $main->getConfig();
+        $this->config = $main->getPluginConfig()->getAll();
     }
 
-    public function onPVP(EntityDamageByEntityEvent $event) {
+    public function onPVP(EntityDamageByEntityEvent $event): void {
         $damager = $event->getDamager();
-        $world = $damager->getWorld()->getFolderName();
-        $time = $damager->getWorld()->getTimeOfDay();
-        $allowedWorlds = $this->config->get("allowed-worlds", []);
+        $target = $event->getEntity();
 
-        if($damager instanceof Player && $time >= World::TIME_SUNRISE && $time < World::TIME_NIGHT && in_array($world, $allowedWorlds)) {
-            if (!$damager->hasPermission("nightpvp.always.on")){
-                $event->cancel();
+        // Ensure both are players
+        if (!$damager instanceof Player || !$target instanceof Player) return;
+
+        $world = $damager->getWorld();
+        $worldName = $world->getFolderName();
+        $worldTime = $world->getTimeOfDay();
+
+        // Check allowed worlds
+        $allowedWorlds = $this->config['allowed-worlds'] ?? ['world'];
+        if (!in_array($worldName, $allowedWorlds)) return;
+
+        // Time settings
+        $nightStart = $this->config['night-start-time'] ?? World::TIME_NIGHT;
+        $nightEnd = $this->config['night-end-time'] ?? World::TIME_SUNRISE;
+        $timeCheckEnabled = $this->config['enable-world-time-check'] ?? true;
+
+        // PvP time restriction
+        if ($timeCheckEnabled && 
+            ($worldTime >= $nightEnd && $worldTime < $nightStart) && 
+            !$damager->hasPermission("nightpvp.bypass")) {
+            
+            $event->cancel();
+            
+            // Send message
+            $messageType = $this->config['error-message-type'] ?? 'popup';
+            $message = $this->config['day-no-pvp'] ?? '§cPvP is only allowed during the night!';
+
+            if ($messageType === 'popup') {
+                $damager->sendPopup($message);
+            } else {
+                $damager->sendMessage($message);
             }
 
-            if($this->config->get("error-message-type") == "popup") {
-                $damager->sendPopup($this->config->get("day-no-pvp"));
-            } else {
-                $damager->sendMessage($this->config->get("error-no-pvp"));
+            // Optional logging if enabled
+            if ($this->config['enable-logger'] ?? false) {
+                $this->main->getLogger()->info("PvP blocked for {$damager->getName()} in world {$worldName}");
             }
         }
     }
