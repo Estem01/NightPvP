@@ -130,5 +130,7 @@ This project is licensed under the [Apache License](https://github.com/Estem01/N
 - [Estem01](https://github.com/Estem01)  
 - [henrythierrydev](https://github.com/henrythierrydev)  
 - [UnknownNull](https://github.com/UnknownNull)
-
+- [Kanade](https://github.com/KanadeDev)
+- [Ihsan48](https://github.com/Ihsan48)
+- [Kauã.](https://github.com/oKauaDev)
 ---
