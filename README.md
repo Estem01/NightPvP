@@ -107,7 +107,7 @@ enable-logger: false
 ## ⭐ Join Our Community
 
 Get support, updates, and share your ideas on our Discord server!  
-👉 **[Discord](https://discord.gg/pyHvRwkJC2)**  
+👉 **[Discord](https://discord.gg/TEQz9QGx3s)**  
 
 ---
 
